@@ -7,7 +7,10 @@ class TreeNode:
 
 
 def solution(root,f,s):
+        # initial bfs queue
         q=[root]
+
+
         while q:
             qlen=len(q)
             temp=[]
@@ -31,8 +34,9 @@ def solution(root,f,s):
                         q.append(None)
             print(temp)
             
-            if all(v is None for v in temp):
+            check=all(v is None for v in temp)
               #no nodes found in tree
+            if check:  
               return -1
             
             if f.val in temp and s.val in temp:
@@ -44,10 +48,9 @@ if __name__=="__main__":
   root.left=TreeNode(9)
   root.right=TreeNode(20)
   root.left.left=TreeNode(5)
-  root.right.right=TreeNode(12)
+  root.right.right=TreeNode(6)
+
+
 
   ans=solution(root,root.left.left,root.right.right)
   print(ans)
-
-
-      
