@@ -32,7 +32,8 @@ def solution(root,f,s):
             print(temp)
             
             if all(v is None for v in temp):
-                return
+              #no nodes found in tree
+              return -1
             
             if f.val in temp and s.val in temp:
               return abs(temp.index(f.val)-temp.index(s.val))-1
@@ -47,3 +48,6 @@ if __name__=="__main__":
 
   ans=solution(root,root.left.left,root.right.right)
   print(ans)
+
+
+      
